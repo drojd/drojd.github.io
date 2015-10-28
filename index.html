@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script src="http://drojd.cz/data/javascript/jquery.js"></script>
+	<title>Error</title>
+	<script src="http://blog.drojd.cz/data/javascript/jQueryRotate.js"></script>
+	<style type="text/css">
+		#na {
+			width: 420px;
+			height: 250px;
+			margin-top: 142.3px;
+			margin-left: 50px;
+		}
+		#f4 {
+			font-size: 180px;
+			font-family: Arial;
+			color: rgb(255, 81, 70);
+		}
+		#f42 {
+			font-size: 180px;
+			font-family: Arial;
+			float: right;
+			margin-top: -200px;
+			color: rgb(12, 197, 156);
+		}
+		#tardis {
+			width: 134px;
+			height: 282px;
+			position: absolute;
+			left: 200px;
+			background-image: url("tardis.png");
+			top: 89px;
+			cursor: POINTER;
+		}
+		#stin {
+			width: 135px;
+			height: 0px;
+			margin-left: 140px;
+			margin-top: 70px;
+			box-shadow: 1px 2px 16px 4px rgba(0, 0, 0, 0.3);
+		}
+		h1 {
+			margin-top: 150px;
+			font-size: 70px;
+			font-family: Arial;
+			color: rgb(65, 65, 65);
+			margin-left: 50px;
+		}
+		p {
+			margin-left: 50px;
+			margin-top: -20px;
+			font-size: 20px;
+			font-family: Arial;
+			color: rgb(65, 65, 65);
+		}
+		span {
+			color: rgb(255, 81, 70);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="na">
+		<div id="f4">4</div>
+		<div id="tardis"></div>
+		<div id="f42">4</div>
+		<div id="stin"></div>
+	</div>
+	<h1>No Content Yet</h1>
+	<p>But you can contribute to <span>/drojd/drojd</span></p>
+</body>
+
+</html>
+<script type="text/javascript">
+	setInterval(pohyb, 500);
+
+	function pohyb() {
+		a = Math.floor((Math.random() * 5) + 1);
+		if (a == 3) {
+			$("#tardis")
+				.rotate(Math.floor((Math.random() * 2) + 1))
+		}
+		$("#tardis")
+			.animate({
+				"margin-top": "+=" + Math.floor((Math.random() * 2) + 1)
+			});
+		$("#tardis")
+			.animate({
+				"margin-top": "-=" + Math.floor((Math.random() * 2) + 1)
+			})
+	}
+	$("#tardis")
+		.click(tardisAnimate);
+
+	function tardisAnimate() {
+		$("#tardis").stop();
+		$("#tardis")
+			.animate({
+				opacity: "0.6"
+			}, 1000);
+		$("#tardis")
+			.animate({
+				opacity: "0.8"
+			}, 1000);
+		$("#tardis")
+			.animate({
+				opacity: "0.3"
+			}, 1000);
+		$("#tardis")
+			.animate({
+				opacity: "0.6"
+			}, 1000);
+		$("#stin")
+			.animate({
+				opacity: "0.6"
+			}, 1000);
+		$("#tardis")
+			.animate({
+				opacity: "0"
+			}, 1000);
+		$("#stin")
+			.animate({
+				opacity: "0"
+			}, 1000)
+	};
+</script>
